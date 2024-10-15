@@ -15,23 +15,23 @@ PART 1
 PART 1 
 PART 1
     ifstream transactions;                                        
-    transactions.open("transactions.txt"); 
-    cout << fixed << showpoint;
+    transactions.open("transactions.txt");                         //open file and read
+    cout << fixed << showpoint;                                   //set to 2 decimal places
     cout << setprecision(2);
     cout << setfill('.');
 
-    float starting_balance;
+    float starting_balance;                            //define variables
     string type_transactions;
     float amount_change;
     float deposits;
     float withdrawals;
 
-    transactions >> starting_balance;
+    transactions >> starting_balance;                                  //get starting balance
     cout << "STARTING BALANCE: $ " << starting_balance << endl;
     cout << "TYPE......AMOUNT....................BALANCE" << endl;
     cout << endl;
 
-    for (int i = 0; i < 7; i += 1)                                                                        //Use for statement using i and # of transactions
+    for (int i = 0; i < 7; i += 1)                                                                        //Use for statements
     {
         transactions >> type_transactions >> amount_change;
         if (type_transactions == "W")                                                                      //Two scenarios for if statements
@@ -42,7 +42,7 @@ PART 1
             deposits += amount_change;
     }
 
-    cout << endl;
+    cout << endl;                                                            //print results
     cout << "ENDING BALANCE: $" << starting_balance << endl;
     cout << "TOTAL WITHDRAWALS: $" << withdrawals << endl;
     cout << "TOTAL DEPOSITS: $" << deposits << endl;
@@ -70,22 +70,22 @@ TOTAL DEPOSITS: $2250.00
 //PART 2
 //PART 2
 //PART 2
-    ifstream transactions;   
-    ofstream outData;                                     
+    ifstream transactions;                              //open and read input file
+    ofstream outData;                                    //open and edit output file
     transactions.open("transactions.txt"); 
     outData.open("outData.txt");
     outData << fixed << showpoint;
     outData << setprecision(2);
     outData << setfill('.');
 
-    float starting_balance;
+    float starting_balance;                              //define variables
     string type_transactions;
     float amount_change;
     float deposits;
     float withdrawals;
 
-    transactions >> starting_balance;
-    outData << "STARTING BALANCE: $ " << starting_balance << endl;
+    transactions >> starting_balance;                                             //print starting balance. get starting template before while statement
+    outData << "STARTING BALANCE: $ " << starting_balance << endl; 
     outData << "TYPE......AMOUNT....................BALANCE" << endl;
     outData << endl;
 
@@ -100,7 +100,7 @@ TOTAL DEPOSITS: $2250.00
             deposits += amount_change;
     }
 
-    outData << endl;
+    outData << endl;                                             //print results
     outData << "ENDING BALANCE: $" << starting_balance << endl;
     outData << "TOTAL WITHDRAWALS: $" << withdrawals << endl;
     outData << "TOTAL DEPOSITS: $" << deposits << endl;
